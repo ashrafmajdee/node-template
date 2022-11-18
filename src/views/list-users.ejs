@@ -1,0 +1,9 @@
+<a href="/users/new">New User</a>
+
+<ul>
+  <% for (var i=0; i < users.length; i++) { %>
+    <li>
+      <span><%= users[i].name %>  &nbsp;   <a href="/users/<%= users[i].id %>">Edit</a></span>
+    </li>
+  <% } %>
+</ul>
