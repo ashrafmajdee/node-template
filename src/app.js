@@ -20,6 +20,4 @@ app.set("views", path.join(__dirname, "./views"));
 app.set("layout", "./layout");
 app.set("view engine", "ejs");
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server Started at ${process.env.PORT}`);
-});
+module.exports = app;

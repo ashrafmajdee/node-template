@@ -4,9 +4,10 @@ const { validationResult } = require("express-validator");
 const listUsersRoute = async (req, res) => {
   const users = await prisma.user.findMany();
   // console.log(req.query.filter)
-  res.render("list-users", {
-    users,
-  });
+  // res.render("list-users", {
+  //   users,
+  // });
+  res.status(200).json(users);
 };
 
 const userRoute = async (req, res) => {
