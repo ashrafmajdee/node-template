@@ -73,16 +73,19 @@ const tokenRefresh = (req, res, next) => {
       decoded.email
       // decoded.level
     );
+
     const refreshToken = generateRefreshToken(
       decoded.user,
       decoded.email
       // decoded.level
     );
+
     req.content = {
       user: decoded.user,
       email: decoded.email,
       // level: decoded.level,
     };
+
     req.token = token;
     req.refreshToken = refreshToken;
 

@@ -7,6 +7,16 @@ const authRoute = (req, res) => {
   });
 };
 
+const refreshTokenRoute = (req, res) => {
+  res.json({
+    message: 'refresh',
+    content: req.content,
+    JWT: req.token,
+    refresh: req.refreshToken,
+  });
+};
+
 module.exports = {
-  authRoute
+  authRoute,
+  refreshTokenRoute
 };
