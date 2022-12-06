@@ -2,8 +2,8 @@ require("dotenv").config();
 
 const path = require("path");
 const express = require("express");
-const expressLayouts = require('express-ejs-layouts');
-const bodyParser = require("body-parser")
+const expressLayouts = require("express-ejs-layouts");
+const bodyParser = require("body-parser");
 const routes = require("./routes");
 
 const app = express();
@@ -14,7 +14,9 @@ app.use(expressLayouts);
 
 app.use("/", routes);
 
-app.use(express.static(path.join(__dirname, "../public"), { maxAge: 31557600000 }));
+app.use(
+  express.static(path.join(__dirname, "../public"), { maxAge: 31557600000 })
+);
 
 app.set("views", path.join(__dirname, "./views"));
 app.set("layout", "./layout");

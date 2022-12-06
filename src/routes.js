@@ -1,16 +1,21 @@
 const express = require("express");
 const { checkSchema } = require("express-validator");
 
-const router = express.Router()
+const router = express.Router();
 
 const { authRoute } = require("./routes/auth");
 const { indexRoute } = require("./routes/index");
-const { listUsersRoute, userRoute, newUserRoute, createUserRoute, updateUserRoute } = require("./routes/users");
+const {
+  listUsersRoute,
+  userRoute,
+  newUserRoute,
+  createUserRoute,
+  updateUserRoute,
+} = require("./routes/users");
 
 const userValidationSchema = require("./validators/user");
 
-const { userLogin, verifyToken } = require('./middlewares/auth');
-
+const { userLogin, verifyToken } = require("./middlewares/auth");
 
 router.get("/", verifyToken, indexRoute);
 
